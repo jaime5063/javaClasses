@@ -27,11 +27,14 @@ public class Registration {
 		return password;
 	}
 
-	public void setEmailName(String email, String emailAt) {
-		if (emailAt.equals("@gmail.com")) {
-			System.out.println(email + emailAt);
+	public void setEmailName(String email) {
+		if (email.contains("@gmail.com")) {
+			System.out.println(email);
+			this.email = email;
+		}else {
+			System.out.println("Email must be gmail");
 		}
-		this.email = email;
+		
 	}
 
 	public void setUserName(String userName) {
@@ -50,12 +53,11 @@ public class Registration {
 		this.password = password;
 		if (password.length() <= 0) {
 			System.out.println("Password cannot be left empty");
-		} else if (password.length() <= 6) {
-			System.out.println("Password must be larger than 6 digits");
+		} else if (password.length() <= 6 || password.contains(userName)) {
+			System.out.println("Invalid password");
 		}
 		if (password.length() > 6) {
 			System.out.println("Password entered successfully");
 		}
 	}
-
 }

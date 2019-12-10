@@ -6,7 +6,6 @@ public class Account {
  * 	
  */
 	
-	
 	// 1. to achieve encapsulation we made our variables Private
 	private long accountNumber;
 	private double balance;
